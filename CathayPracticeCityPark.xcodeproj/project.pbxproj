@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDC00F09EAEA79BB2251175B /* libPods-CathayPracticeCityPark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10433B04D21DA2B0ABC1D617 /* libPods-CathayPracticeCityPark.a */; };
+		DED7161F214572F00011C73E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED7161E214572F00011C73E /* AppDelegate.m */; };
+		DED71625214572F00011C73E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED71623214572F00011C73E /* Main.storyboard */; };
+		DED71627214572F20011C73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED71626214572F20011C73E /* Assets.xcassets */; };
+		DED7162A214572F20011C73E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED71628214572F20011C73E /* LaunchScreen.storyboard */; };
+		DED7162D214572F20011C73E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED7162C214572F20011C73E /* main.m */; };
+		DED71638214576600011C73E /* ParkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED71637214576600011C73E /* ParkListViewController.m */; };
+		DED7163D21457B300011C73E /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED7163B21457B300011C73E /* ParkTableViewCell.m */; };
+		DED7163E21457B300011C73E /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED7163C21457B300011C73E /* ParkTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10433B04D21DA2B0ABC1D617 /* libPods-CathayPracticeCityPark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CathayPracticeCityPark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		374A833BA033CC6975FB4EBE /* Pods-CathayPracticeCityPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathayPracticeCityPark.release.xcconfig"; path = "Pods/Target Support Files/Pods-CathayPracticeCityPark/Pods-CathayPracticeCityPark.release.xcconfig"; sourceTree = "<group>"; };
+		D11AB00A74729D5649ABF0C6 /* Pods-CathayPracticeCityPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathayPracticeCityPark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CathayPracticeCityPark/Pods-CathayPracticeCityPark.debug.xcconfig"; sourceTree = "<group>"; };
+		DED7161A214572F00011C73E /* CathayPracticeCityPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayPracticeCityPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DED7161D214572F00011C73E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DED7161E214572F00011C73E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DED71624214572F00011C73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DED71626214572F20011C73E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DED71629214572F20011C73E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DED7162B214572F20011C73E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DED7162C214572F20011C73E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DED71636214576600011C73E /* ParkListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkListViewController.h; sourceTree = "<group>"; };
+		DED71637214576600011C73E /* ParkListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkListViewController.m; sourceTree = "<group>"; };
+		DED7163A21457B300011C73E /* ParkTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkTableViewCell.h; sourceTree = "<group>"; };
+		DED7163B21457B300011C73E /* ParkTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkTableViewCell.m; sourceTree = "<group>"; };
+		DED7163C21457B300011C73E /* ParkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DED71617214572F00011C73E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC00F09EAEA79BB2251175B /* libPods-CathayPracticeCityPark.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08BE7F659A90E8ABAE442423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10433B04D21DA2B0ABC1D617 /* libPods-CathayPracticeCityPark.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5432BFAE77BC5369A871C4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D11AB00A74729D5649ABF0C6 /* Pods-CathayPracticeCityPark.debug.xcconfig */,
+				374A833BA033CC6975FB4EBE /* Pods-CathayPracticeCityPark.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DED71611214572F00011C73E = {
+			isa = PBXGroup;
+			children = (
+				DED7161C214572F00011C73E /* CathayPracticeCityPark */,
+				DED7161B214572F00011C73E /* Products */,
+				B5432BFAE77BC5369A871C4A /* Pods */,
+				08BE7F659A90E8ABAE442423 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DED7161B214572F00011C73E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DED7161A214572F00011C73E /* CathayPracticeCityPark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DED7161C214572F00011C73E /* CathayPracticeCityPark */ = {
+			isa = PBXGroup;
+			children = (
+				DED71635214575AB0011C73E /* Models */,
+				DED71634214575A20011C73E /* Views */,
+				DED71633214575990011C73E /* ViewControllers */,
+				DED7161D214572F00011C73E /* AppDelegate.h */,
+				DED7161E214572F00011C73E /* AppDelegate.m */,
+				DED71626214572F20011C73E /* Assets.xcassets */,
+				DED71628214572F20011C73E /* LaunchScreen.storyboard */,
+				DED7162B214572F20011C73E /* Info.plist */,
+				DED7162C214572F20011C73E /* main.m */,
+			);
+			path = CathayPracticeCityPark;
+			sourceTree = "<group>";
+		};
+		DED71633214575990011C73E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DED71639214578AE0011C73E /* Cell */,
+				DED71636214576600011C73E /* ParkListViewController.h */,
+				DED71637214576600011C73E /* ParkListViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DED71634214575A20011C73E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DED71623214572F00011C73E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DED71635214575AB0011C73E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DED71639214578AE0011C73E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DED7163A21457B300011C73E /* ParkTableViewCell.h */,
+				DED7163B21457B300011C73E /* ParkTableViewCell.m */,
+				DED7163C21457B300011C73E /* ParkTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DED71619214572F00011C73E /* CathayPracticeCityPark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DED71630214572F20011C73E /* Build configuration list for PBXNativeTarget "CathayPracticeCityPark" */;
+			buildPhases = (
+				0FDBC2ED571AAC792E3F4C3F /* [CP] Check Pods Manifest.lock */,
+				DED71616214572F00011C73E /* Sources */,
+				DED71617214572F00011C73E /* Frameworks */,
+				DED71618214572F00011C73E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CathayPracticeCityPark;
+			productName = CathayPracticeCityPark;
+			productReference = DED7161A214572F00011C73E /* CathayPracticeCityPark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DED71612214572F00011C73E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = HappyTerry;
+				TargetAttributes = {
+					DED71619214572F00011C73E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = DED71615214572F00011C73E /* Build configuration list for PBXProject "CathayPracticeCityPark" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DED71611214572F00011C73E;
+			productRefGroup = DED7161B214572F00011C73E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DED71619214572F00011C73E /* CathayPracticeCityPark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DED71618214572F00011C73E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DED7162A214572F20011C73E /* LaunchScreen.storyboard in Resources */,
+				DED71627214572F20011C73E /* Assets.xcassets in Resources */,
+				DED71625214572F00011C73E /* Main.storyboard in Resources */,
+				DED7163E21457B300011C73E /* ParkTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FDBC2ED571AAC792E3F4C3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CathayPracticeCityPark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DED71616214572F00011C73E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DED7162D214572F20011C73E /* main.m in Sources */,
+				DED7161F214572F00011C73E /* AppDelegate.m in Sources */,
+				DED71638214576600011C73E /* ParkListViewController.m in Sources */,
+				DED7163D21457B300011C73E /* ParkTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DED71623214572F00011C73E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DED71624214572F00011C73E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DED71628214572F20011C73E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DED71629214572F20011C73E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DED7162E214572F20011C73E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DED7162F214572F20011C73E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DED71631214572F20011C73E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11AB00A74729D5649ABF0C6 /* Pods-CathayPracticeCityPark.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W93B3G2754;
+				INFOPLIST_FILE = CathayPracticeCityPark/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.happyterry.CathayPracticeCityPark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DED71632214572F20011C73E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 374A833BA033CC6975FB4EBE /* Pods-CathayPracticeCityPark.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W93B3G2754;
+				INFOPLIST_FILE = CathayPracticeCityPark/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.happyterry.CathayPracticeCityPark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DED71615214572F00011C73E /* Build configuration list for PBXProject "CathayPracticeCityPark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DED7162E214572F20011C73E /* Debug */,
+				DED7162F214572F20011C73E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DED71630214572F20011C73E /* Build configuration list for PBXNativeTarget "CathayPracticeCityPark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DED71631214572F20011C73E /* Debug */,
+				DED71632214572F20011C73E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DED71612214572F00011C73E /* Project object */;
+}

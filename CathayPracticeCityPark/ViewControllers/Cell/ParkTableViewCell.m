@@ -7,6 +7,7 @@
 //
 
 #import "ParkTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ParkTableViewCell
 
@@ -21,11 +22,11 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCellName:(NSString *)name intro:(NSString *)intro {
+- (void)configureCellName:(NSString *)name location:(NSString *)location behavior:(NSString *)behavior picUrl:(NSString *)picUrl {
     [self.nameLabel setText:name];
-    if (intro.length > 0) {
-        [self.introLabel setText:intro];
-    }
+    [self.locationLabel setText:location];
+    [self.behaviorLabel setText:behavior];
+    [self.picImageView sd_setImageWithURL:[NSURL URLWithString:picUrl]];
 }
 
 @end

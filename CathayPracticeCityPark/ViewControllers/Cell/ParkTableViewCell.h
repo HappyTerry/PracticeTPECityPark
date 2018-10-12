@@ -11,8 +11,10 @@
 @interface ParkTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *introLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *behaviorLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *picImageView;
 
-- (void)configureCellName:(NSString *)name intro:(NSString *)intro;
+- (void)configureCellName:(NSString *)name location:(NSString *)location behavior:(NSString *)behavior picUrl:(NSString *)picUrl;
 
 @end

@@ -77,14 +77,6 @@
 }
 
 #pragma mark - private
-- (float)stringHeightWithText:(NSString *)text font:(UIFont *)font size:(CGSize)size {
-    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment = NSTextAlignmentLeft;
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    CGSize resultSize = [text boundingRectWithSize:size options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle} context:nil].size;
-    return resultSize.height + 5;
-}
-
 - (NSArray *)resultsForResponse:(NSDictionary *)responseObject{
     if([responseObject isKindOfClass:[NSDictionary class]] &&
        [responseObject.allKeys containsObject:@"result"]) {

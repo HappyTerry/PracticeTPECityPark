@@ -8,13 +8,13 @@
 
 #import "ParkListViewController.h"
 #import "ParkTableViewCell.h"
-#import <AFNetworking/AFNetworking.h>
 
 #import "ParkModel.h"
 #import "Helper.h"
+#import "ParkManager.h"
 
 @interface ParkListViewController ()
-@property AFHTTPSessionManager * manager;
+@property ParkManager * manager;
 @property (nonatomic) int resultCount;
 @end
 
@@ -49,72 +49,33 @@
 #pragma mark - API
 - (void)setupAPI {
     //AFNetwork manager initial
-    self.manager = [[AFHTTPSessionManager alloc] init];
-    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    [self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json",@"text/plain", nil];
-    self.manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 300)];
+    self.manager = [[ParkManager alloc] init];
 }
 
 - (void)getParkList {
-    NSString *URLString = @"http://data.taipei/opendata/datalist/apiAccess";
-    NSDictionary *parameters =
-  @{@"scope": @"resourceAquire",
-    @"rid": @"bf073841-c734-49bf-a97f-3757a6013812",
-    @"limit": @"30",
-    @"offset": @"0"
-    };
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:parameters error:nil];
-    
-    [[self.manager dataTaskWithRequest:request
-                        uploadProgress:nil
-                      downloadProgress:nil
-                     completionHandler:^(NSURLResponse * response, id responseObject, NSError * error) {
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSLog(@"response \n%@ \nresponse object \n%@", response, responseObject);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.parkList = [self handleDataWithResults:[self  resultsForResponse:responseObject]];
-                [self.tableView reloadData];
-            });
-        }
-    }] resume];
+    [self.manager getListWithLimit:30
+                            offset:0
+                 completionHandler:^(NSDictionary * result) {
+        self.parkList = [self handleDataWithResults:[self  resultsForResponse:result]];
+        [self.tableView reloadData];
+    }];
 }
 
-- (void)getMoreParks {
-    NSString *URLString = @"http://data.taipei/opendata/datalist/apiAccess";
-    NSDictionary *parameters =
-    @{@"scope": @"resourceAquire",
-      @"rid": @"bf073841-c734-49bf-a97f-3757a6013812",
-      @"limit": @"30",
-      @"offset": [NSString stringWithFormat:@"%lu",(unsigned long)self.parkList.count]
-      };
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:parameters error:nil];
-    
-    [[self.manager dataTaskWithRequest:request
-                        uploadProgress:nil
-                      downloadProgress:nil
-                     completionHandler:^(NSURLResponse * response, id responseObject, NSError * error) {
-                         if (error) {
-                             NSLog(@"Error: %@", error);
-                         } else {
-                             NSLog(@"response \n%@ \nresponse object \n%@", response, responseObject);
-                             dispatch_async(dispatch_get_main_queue(), ^{
-                                 NSArray * newList = [self handleDataWithResults:[self  resultsForResponse:responseObject]];
-                                 NSMutableArray * indexPaths = [NSMutableArray new];
-                                 for (int i = (int)self.parkList.count; i < newList.count; i++) {
-                                     NSIndexPath * indexPath = [NSIndexPath indexPathForRow:i inSection:1];
-                                     [indexPaths addObject:indexPath];
-                                 }
-                                 self.parkList = newList;
-                                 [self.tableView performBatchUpdates:^{
-                                     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-                                 } completion:nil];
-                             });
-                         }
-                     }] resume];
+- (void)getMoreParksFrom:(int)offset {
+    [self.manager getListWithLimit:30
+                            offset:offset
+                 completionHandler:^(NSDictionary * result) {
+                     NSArray * newList = [self handleDataWithResults:[self resultsForResponse:result]];
+                     NSMutableArray * indexPaths = [NSMutableArray new];
+                     for (int i = (int)self.parkList.count; i < newList.count; i++) {
+                         NSIndexPath * indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                         [indexPaths addObject:indexPath];
+                     }
+                     self.parkList = newList;
+                     [self.tableView performBatchUpdates:^{
+                         [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+                     } completion:nil];
+                 }];
 }
 
 #pragma mark - private

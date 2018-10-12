@@ -10,23 +10,12 @@
 #import "ParkTableViewCell.h"
 #import <AFNetworking/AFNetworking.h>
 
-@class ParkModel;
-@class Helper;
+#import "ParkModel.h"
+#import "Helper.h"
 
 @interface ParkListViewController ()
 @property AFHTTPSessionManager * manager;
 @property (nonatomic) int resultCount;
-@end
-
-@interface ParkModel:NSObject
-@property (strong, nonatomic) NSString * name;
-@property (strong, nonatomic) NSString * introduction;
-- (id)initWithData:(NSDictionary *)data;
-@end
-
-@interface Helper:NSObject
-+ (NSString *)getStringValueWithColumn:(NSString *)column data:(NSDictionary *)data;
-+ (int)getIntValueWithColumn:(NSString *)column data:(NSDictionary *)data;
 @end
 
 @implementation ParkListViewController
@@ -264,38 +253,5 @@
         [self.titleLabel setAlpha:(1 - alpha)];
     }
     [self.view layoutIfNeeded];
-}
-@end
-
-@implementation ParkModel
-- (id)init {
-    self = [super init];
-    if(self){
-        self.name = @"";
-        self.introduction = @"";
-    }
-    return self;
-}
-- (id)initWithData:(NSDictionary *)data {
-    self = [self init];
-    self.name = [Helper getStringValueWithColumn:@"ParkName" data:data];
-    self.introduction = [Helper getStringValueWithColumn:@"Introduction" data:data];
-    return self;
-}
-@end
-
-@implementation Helper
-+ (NSString *)getStringValueWithColumn:(NSString *)column data:(NSDictionary *)data {
-    if ([data.allKeys containsObject:column]) {
-        return [NSString stringWithFormat:@"%@", data[column]];
-    }
-    return @"";
-}
-+ (int)getIntValueWithColumn:(NSString *)column data:(NSDictionary *)data {
-    NSString * result = [self getStringValueWithColumn:column data:data];
-    if (result.length > 0) {
-        return [result intValue];
-    }
-    return 0;
 }
 @end

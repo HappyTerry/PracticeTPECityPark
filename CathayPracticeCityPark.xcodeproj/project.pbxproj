@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CDC00F09EAEA79BB2251175B /* libPods-CathayPracticeCityPark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10433B04D21DA2B0ABC1D617 /* libPods-CathayPracticeCityPark.a */; };
+		DE2AAB14215C67D60059C7A3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2AAB13215C67D60059C7A3 /* Helper.m */; };
+		DE2AAB17215C68960059C7A3 /* ParkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2AAB16215C68960059C7A3 /* ParkModel.m */; };
+		DE2AAB29216307B00059C7A3 /* ParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2AAB28216307B00059C7A3 /* ParkManager.m */; };
 		DED7161F214572F00011C73E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED7161E214572F00011C73E /* AppDelegate.m */; };
 		DED71625214572F00011C73E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED71623214572F00011C73E /* Main.storyboard */; };
 		DED71627214572F20011C73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED71626214572F20011C73E /* Assets.xcassets */; };
@@ -22,6 +25,12 @@
 		10433B04D21DA2B0ABC1D617 /* libPods-CathayPracticeCityPark.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CathayPracticeCityPark.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		374A833BA033CC6975FB4EBE /* Pods-CathayPracticeCityPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathayPracticeCityPark.release.xcconfig"; path = "Pods/Target Support Files/Pods-CathayPracticeCityPark/Pods-CathayPracticeCityPark.release.xcconfig"; sourceTree = "<group>"; };
 		D11AB00A74729D5649ABF0C6 /* Pods-CathayPracticeCityPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CathayPracticeCityPark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CathayPracticeCityPark/Pods-CathayPracticeCityPark.debug.xcconfig"; sourceTree = "<group>"; };
+		DE2AAB12215C67D60059C7A3 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		DE2AAB13215C67D60059C7A3 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		DE2AAB15215C68960059C7A3 /* ParkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkModel.h; sourceTree = "<group>"; };
+		DE2AAB16215C68960059C7A3 /* ParkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkModel.m; sourceTree = "<group>"; };
+		DE2AAB27216307B00059C7A3 /* ParkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkManager.h; sourceTree = "<group>"; };
+		DE2AAB28216307B00059C7A3 /* ParkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkManager.m; sourceTree = "<group>"; };
 		DED7161A214572F00011C73E /* CathayPracticeCityPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayPracticeCityPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED7161D214572F00011C73E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DED7161E214572F00011C73E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +75,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE2AAB11215C67A20059C7A3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DE2AAB12215C67D60059C7A3 /* Helper.h */,
+				DE2AAB13215C67D60059C7A3 /* Helper.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		DE2AAB26216306D30059C7A3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DE2AAB27216307B00059C7A3 /* ParkManager.h */,
+				DE2AAB28216307B00059C7A3 /* ParkManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		DED71611214572F00011C73E = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +114,8 @@
 		DED7161C214572F00011C73E /* CathayPracticeCityPark */ = {
 			isa = PBXGroup;
 			children = (
+				DE2AAB26216306D30059C7A3 /* API */,
+				DE2AAB11215C67A20059C7A3 /* Utility */,
 				DED71635214575AB0011C73E /* Models */,
 				DED71634214575A20011C73E /* Views */,
 				DED71633214575990011C73E /* ViewControllers */,
@@ -121,6 +150,8 @@
 		DED71635214575AB0011C73E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE2AAB15215C68960059C7A3 /* ParkModel.h */,
+				DE2AAB16215C68960059C7A3 /* ParkModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,7 +262,10 @@
 				DED7162D214572F20011C73E /* main.m in Sources */,
 				DED7161F214572F00011C73E /* AppDelegate.m in Sources */,
 				DED71638214576600011C73E /* ParkListViewController.m in Sources */,
+				DE2AAB17215C68960059C7A3 /* ParkModel.m in Sources */,
 				DED7163D21457B300011C73E /* ParkTableViewCell.m in Sources */,
+				DE2AAB29216307B00059C7A3 /* ParkManager.m in Sources */,
+				DE2AAB14215C67D60059C7A3 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

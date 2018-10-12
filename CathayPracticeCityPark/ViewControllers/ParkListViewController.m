@@ -27,6 +27,7 @@
     [self setupAPI];
     
     // setup ui
+    [self setupUI];
     [self setupTableView];
     
     // get data
@@ -34,16 +35,13 @@
 }
 
 #pragma mark - Layout
+- (void)setupUI {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+}
+
 - (void)setupTableView {
     [self.tableView registerNib:[UINib nibWithNibName:@"ParkTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ParkCell"];
-    
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 40)];
-    [self.headerView setBackgroundColor:[UIColor whiteColor]];
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 20)];
-    [label setText:@"台北市公園景點"];
-    [label setFont:[UIFont fontWithName:@"PingFangTC-Medium" size:17]];
-    [self.headerView addSubview:label];
-    [self.headerView setAlpha:0];
 }
 
 #pragma mark - API
@@ -123,96 +121,38 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 0;
-            
-        default:
-            return self.parkList.count;
-    }
+    return self.parkList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case 0:
-        {
-            return [UITableViewCell new];
-        }
-        default:
-        {
-            ParkTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ParkCell"];
-            ParkModel * model = self.parkList[indexPath.row];
-            [cell configureCellName:model.name intro:model.introduction];
-            return cell;
-        }
-    }
+    ParkTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ParkCell"];
+    ParkModel * model = self.parkList[indexPath.row];
+    [cell configureCellName:model.name location:model.location behavior:model.behavior picUrl:model.picUrl];
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 &&
-        indexPath.row == self.parkList.count - 2 &&
+    if (indexPath.row == self.parkList.count - 2 &&
         [self isMoreData]) {
-        [self getMoreParks];
+        [self getMoreParksFrom:(int)self.parkList.count];
     }
 }
 
 #pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 40;
-            
-        default:
-            return 40;
-    }
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case 0:
-        {
-            return 40;
-        }
-        default:
-        {
-            ParkModel * model = self.parkList[indexPath.row];
-            CGSize labelSize = CGSizeMake(tableView.frame.size.width - 20, MAXFLOAT);
-            return 50 + [self stringHeightWithText:model.introduction font:[UIFont fontWithName:@"PingFangTC-Regular" size:17] size:labelSize];
-        }
-    }
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-        {
-            UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
-            [view setBackgroundColor:[UIColor clearColor]];
-            return view;
-        }
-        default:
-        {
-            return self.headerView;
-        }
-    }
-    
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y > 40) {
-        [self.headerView setAlpha:1];
-        [self.titleLabel setAlpha:0];
-    } else {
-        CGFloat alpha = scrollView.contentOffset.y / 40;
-        [self.headerView setAlpha:alpha];
-        [self.titleLabel setAlpha:(1 - alpha)];
-    }
+    CGFloat naviHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat alpha = (naviHeight - 44) / 52;
+    [self.navigationController.navigationItem.titleView setAlpha:alpha];
     [self.view layoutIfNeeded];
+    NSLog(@"navi bar height %f",naviHeight);
 }
 @end

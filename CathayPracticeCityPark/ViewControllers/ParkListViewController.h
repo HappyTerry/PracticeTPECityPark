@@ -11,9 +11,7 @@
 @interface ParkListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (strong, nonatomic) NSArray * parkList;
-@property (strong, nonatomic) UIView * headerView;
 
 @end

@@ -98,10 +98,21 @@
     for (NSDictionary * park in results) {
         if ([park isKindOfClass:[NSDictionary class]]) {
             ParkModel * model = [[ParkModel alloc] initWithData:park];
-            [datas addObject:model];
+            if ([self checkIfExist:model] == NO) {
+                [datas addObject:model];
+            }
         }
     }
     return [NSArray arrayWithArray:datas];
+}
+
+- (BOOL)checkIfExist:(ParkModel *)model {
+    for (ParkModel * park in self.parkList) {
+        if ([park.name isEqualToString:model.name]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (BOOL)isMoreData {
